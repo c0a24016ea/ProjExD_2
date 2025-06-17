@@ -109,12 +109,9 @@ def main():
         if check_bound(kk_rct) != (True, True):
             kk_rct.move_ip(-sum_mv[0], -sum_mv[1])  # 移動をなかったことにする
         screen.blit(kk_img, kk_rct)
-
-        acc = bb_accs[min(tmr//500, 9)]
         avx = vx * bb_accs[min(tmr // 500, 9)]
         avy = vy * bb_accs[min(tmr // 500, 9)]
         bb_img = bb_imgs[min(tmr // 500, 9)]
-
         bb_rct.move_ip(avx, avy)  # 爆弾の移動
         yoko, tate = check_bound(bb_rct)
         if not yoko:  # 横方向にはみ出ていたら
