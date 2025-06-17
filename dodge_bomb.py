@@ -72,7 +72,6 @@ def main():
     kk_rct = kk_img.get_rect()
     kk_rct.center = 300, 200
     bb_img = pg.Surface((20, 20))  # 空のSurfaceを作る（爆弾用）
-    pg.draw.circle(bb_img, (255, 0, 0), (10, 10), 10)  # 赤い円を描く
     bb_img.set_colorkey((0, 0, 0))  # 黒を透明色に設定
     bb_rct = bb_img.get_rect()  # 爆弾Rectを取得
     bb_rct.centerx = random.randint(0, WIDTH)  # 横座標用の乱数
