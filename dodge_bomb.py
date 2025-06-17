@@ -63,6 +63,7 @@ def init_bb_imgs() -> tuple[list[pg.Surface], list[int]]:
 
 bb_imgs, bb_accs = init_bb_imgs()
 
+
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
     screen = pg.display.set_mode((WIDTH, HEIGHT))
@@ -82,7 +83,6 @@ def main():
     while True:
         avx = vx*bb_accs[min(tmr//500, 9)]
         bb_img = bb_imgs[min(tmr//500, 9)]
-
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
@@ -90,7 +90,6 @@ def main():
             gameover(screen)
             return
         screen.blit(bg_img, [0, 0]) 
-
         key_lst = pg.key.get_pressed()
         sum_mv = [0, 0]
         for key, mv in DELTA.items():
